@@ -1,0 +1,16 @@
+storage:
+  postgres:
+    dsn: postgresql://ev_user:ev_pass@localhost:5432/ev_db
+embedder:
+  provider: "openai"
+  model: "text-embedding-3-large"
+  api_key_env: "OPENAI_API_KEY"
+ingest:
+  chunk_size: 1000
+  chunk_overlap: 150
+  allowed_ext: [".txt", ".md", ".docx", ".pdf"]
+  default_namespace: "etherverse"
+soul:
+  fragment_min: 160
+  fragment_max: 420
+  tags: ["origin","ethic","myth","mission","vision","exhortation"]
