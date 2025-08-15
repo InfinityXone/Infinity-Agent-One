@@ -30,3 +30,9 @@ config/.env.agent_one.bak.*
 venv
 __pycache__/
 *.log
+.env
+.venv
+venv
+__pycache__/
+*.log
+config/.env.agent_one.bak.*
