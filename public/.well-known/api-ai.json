@@ -1,0 +1,18 @@
+{
+  "name": "Infinity Agent One",
+  "role": "api-ai",
+  "version": "1.0.0",
+  "broker_url": "https://YOUR-BROKER-DOMAIN",
+  "handshake_header": "NEO-PULSE",
+  "default_agent_id": "FinSynapse",
+  "aliases": ["Echo", "AgentInfinity"],
+  "capabilities": ["run_script", "git_clone", "git_push", "write_file", "read_file", "vercel_deploy"],
+  "endpoints": { "token": "/token", "exec": "/exec" },
+  "security": {
+    "auth": "bearer_jwt",
+    "jwt_claims": ["iss","sub","aud","iat","exp","ai_role"],
+    "ai_role_value": "api-ai",
+    "hmac_header": "X-Signature",
+    "agent_header": "Agent-ID"
+  }
+}
