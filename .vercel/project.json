@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_AqQGs01K6D6hcJWhbQA7SvqBGiAa",
+  "orgId": "team_bnqG4LiqoCcZJZGYL3Dio90m",
+  "projectName": "genesis-ai-neural-link",
+  "settings": {
+    "createdAt": 1753373099898,
+    "framework": "nextjs",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "22.x"
+  }
+}

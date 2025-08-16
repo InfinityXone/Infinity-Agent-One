@@ -1,5 +1,41 @@
-node_modules/
-.env
-.vercel
-.next
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.log
 
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Node / Next.js
+node_modules/
+.next/
+dist/
+build/
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Local configs / secrets
+.env
+*.local
+*.secret
+
+# IDE
+.vscode/
+.idea/
+
+# Coverage
+coverage/
+*.lcov
