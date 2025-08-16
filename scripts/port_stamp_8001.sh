@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-REPO="${1:-.}"
-cd "$REPO"
-echo "🔧 Stamping port 8001 across repo: $REPO"
+REPO="${1:-.}"; cd "$REPO"
 mapfile -t FILES < <(git ls-files | grep -E '\.(env|json|js|ts|tsx|py|md|sh|yaml|yml|toml|txt)$')
 for f in "${FILES[@]}"; do
   [ -f "$f" ] || continue

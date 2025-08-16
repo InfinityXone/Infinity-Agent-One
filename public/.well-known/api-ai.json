@@ -6,7 +6,7 @@
   "handshake_header": "NEO-PULSE",
   "default_agent_id": "FinSynapse",
   "aliases": ["Echo", "AgentInfinity"],
-  "capabilities": ["run_script", "git_clone", "git_push", "write_file", "read_file", "vercel_deploy"],
+  "capabilities": ["run_script","git_clone","git_push","write_file","read_file","vercel_deploy"],
   "endpoints": { "token": "/token", "exec": "/exec" },
   "security": {
     "auth": "bearer_jwt",

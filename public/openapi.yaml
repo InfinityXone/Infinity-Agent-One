@@ -1,44 +1,20 @@
 openapi: 3.0.3
-info:
-  title: Infinity Agent One – API AI Broker
-  version: 1.0.0
-servers:
-  - url: https://YOUR-BROKER-DOMAIN
+info: { title: Infinity Agent One – API AI Broker, version: 1.0.0 }
+servers: [ { url: https://YOUR-BROKER-DOMAIN } ]
 paths:
   /token:
     get:
-      summary: Get short-lived token (requires x-handshake header)
-      parameters:
-        - in: header
-          name: x-handshake
-          schema: { type: string, example: NEO-PULSE }
-          required: true
-      responses:
-        '200':
-          description: Token issued
-          content: { application/json: { schema: { type: object, properties: { token: { type: string } } } } }
+      summary: Get token
+      parameters: [ { in: header, name: x-handshake, schema: { type: string, example: NEO-PULSE }, required: true } ]
+      responses: { '200': { description: Token, content: { application/json: { schema: { type: object, properties: { token: { type: string } } } } } } }
   /exec:
     post:
-      summary: Execute an agentic command
+      summary: Execute command
       security: [ { bearerAuth: [] } ]
       parameters:
-        - in: header
-          name: Agent-ID
-          schema: { type: string, example: FinSynapse }
-        - in: header
-          name: x-handshake
-          schema: { type: string, example: NEO-PULSE }
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                action: { type: string, example: run_script }
-                payload: { type: object, additionalProperties: true }
-      responses:
-        '200': { description: Execution response, content: { application/json: { schema: { type: object } } } }
+        - { in: header, name: Agent-ID, schema: { type: string, example: FinSynapse } }
+        - { in: header, name: x-handshake, schema: { type: string, example: NEO-PULSE } }
+      requestBody: { required: true, content: { application/json: { schema: { type: object, properties: { action: { type: string }, payload: { type: object } } } } } }
+      responses: { '200': { description: OK, content: { application/json: { schema: { type: object } } } } }
 components:
-  securitySchemes:
-    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }
+  securitySchemes: { bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT } }

@@ -1,4 +1,3 @@
-// Next.js app router server proxy → Broker (8001)
 import { NextRequest, NextResponse } from 'next/server';
 const BROKER_URL = process.env.BROKER_URL || 'http://127.0.0.1:8001';
 const AGENT_ID = process.env.AGENT_ID || 'FinSynapse';
